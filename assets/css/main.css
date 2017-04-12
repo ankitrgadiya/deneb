@@ -1,0 +1,53 @@
+/* Logo */
+.logo {
+    height: 70px;
+}
+
+/* Navbar */
+nav {
+    background: #232526;  /* fallback for old browsers */
+}
+@media screen and (min-width: 991px) {
+    nav .brand-logo.left {
+        margin-left: 30px;
+    }
+}
+
+
+/* Header */
+.parallax-container {
+    height: 95vh;
+}
+header img {
+    z-index: 0;
+}
+header h1 {
+    z-index: 1;
+}
+
+/* Text card */
+.card {
+    background: #282c34;
+    color: #abb2bf;
+    margin-top: 50px;
+    padding: 30px;
+}
+
+.card a {
+    color: #98C379;
+}
+.card .card-title {
+
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Pagination */
+ul.pagination .active {
+    background: #282c34;
+}
+
+/* Footer */
+.page-footer {
+    background: #282c34;
+}

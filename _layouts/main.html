@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+<!-- Header -->
+<header>
+    <div class="parallax-container z-depth-3">
+        <div class="parallax">
+            <img src="{{ site.cover }}" width="100%" class="z-depth-5">
+        </div>
+    </div>
+</header>
+
+<!-- Container -->
+<div class="container">
+    <div class="columns">
+
+        <!-- Text section -->
+        <div class="column s6 offset-s3">
+            {% for post in site.posts %}
+            <div class="card blue-grey darken-4 z-depth-1">
+                <div class="card-content">
+                    <span class="card-title">{{ post.title }}</span>
+                    <p>
+                        {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+                    </p>
+                    <p>
+                        <a href="{{ post.url }}">Read More ...</a>
+                    </p>
+                </div>
+                <div class="card-action">
+                    <div class="chip">
+                        <img src="assets/images/avatar.svg">
+                        {{ site.author }}
+                    </div>
+                    <div class="chip">{{ post.date | date: '%B %d, %Y' }}</div>
+                    {% for tag in post.tags %}
+                        <div class="chip">{{ tag }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <ul class="pagination center">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+
+    </div>
+</div>

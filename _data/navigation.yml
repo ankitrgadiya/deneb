@@ -1,0 +1,11 @@
+- name: Home
+  link: https://ankitrgadiya.in
+
+- name: Blog
+  link: https://blog.ankitrgadiya.in
+
+- name: Source
+  link: https://github.com/ankitrgadiya/deneb
+
+- name: Download
+  link: https://github.com/ankitrgadiya/deneb/archive/master.zip
