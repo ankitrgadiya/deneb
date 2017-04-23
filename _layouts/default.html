@@ -3,51 +3,54 @@
 Designed and Developed by Ankit R Gadiya <https://ankitrgadiya.in>
 -->
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% if page.tags %}
-        <meta name="keywords" content="{{ page.tags | join: ', ' }}">
-        {% endif %}
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.tags %}
+    <meta name="keywords" content="{{ page.tags | join: ', ' }}">
+    {% endif %}
 
-        <title>{{ site.title }}</title>
+    <title>{{ site.title }}</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
 
-        <!-- Highlight Js -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
-        <link rel="stylesheet" href="/assets/css/main.css">
+    <!-- Highlight Js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
 
-        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
-        {% if page.title %} {% assign title = page.title %} {% else %} {% assign title = site.title %} {% endif %}
-        {% if page.description %} {% assign description = page.description %} {% else %} {% assign description = site.description %} {% endif %}
-        {% if page.keywords %} {% assign keywords = page.keywords %} {% else %} {% assign keywords = site.keywords %} {% endif %}
-        {% if page.cover %} {% assign cover = page.cover %} {% else %} {% assign cover = site.cover %} {% endif %}
+    {% if page.title %} {% assign title = page.title %} {% else %} {% assign title = site.title %} {% endif %}
+    {% if page.description %} {% assign description = page.description %} {% else %} {% assign description = site.description %} {% endif %}
+    {% if page.keywords %} {% assign keywords = page.keywords %} {% else %} {% assign keywords = site.keywords %} {% endif %}
+    {% if page.cover %} {% assign cover = page.cover %} {% else %} {% assign cover = site.cover %} {% endif %}
 
-        <!-- Twitter Cards -->
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="{{ title }}" />
-        <meta name="twitter:description" content="{{ description }}" />
-        <meta name="twitter:image" content="{{ site.url }}{{ cover }}" />
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="{{ title }}" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="twitter:image" content="{{ cover }}" />
 
-        <!-- Google plus -->
-        <meta name="author" content="{{ site.author.googleplus }}">
-        <link rel="author" href="{{ site.author.googleplus }}">
+    <!-- Google plus -->
+    <meta name="author" content="{{ site.author.googleplus }}">
+    <link rel="author" href="{{ site.author.googleplus }}">
 
-        <!-- Open Graph -->
-        <meta property="og:locale" content="{{ site.lang }}">
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="{{ title }}">
-        <meta property="og:description" content="{{ description }}">
-        <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
-        <meta property="og:site_name" content="{{ site.title }}">
+    <!-- Open Graph -->
+    <meta property="og:locale" content="{{ site.lang }}">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ title }}">
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+
+    <!-- Google Verification -->
+    <meta name="google-site-verification" content="{{ site.google_verification }}" />
 
 		<!-- Favicon -->
 		<link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png">
@@ -68,44 +71,41 @@ Designed and Developed by Ankit R Gadiya <https://ankitrgadiya.in>
 		<meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 
+  </head>
+  <body>
 
-    </head>
-    <body>
+    <!-- Navbar -->
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo left">{{ site.title }}</a>
+          <a href="#" class="brand-logo center"><img src="/assets/images/logo.png" class="logo"></a>
+          <ul class="right hide-on-med-and-down">
 
-        <!-- Navbar -->
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo left">{{ site.title }}</a>
-                    <a href="#" class="brand-logo center"><img src="/assets/images/logo.png" class="logo"></a>
-                    <ul class="right hide-on-med-and-down">
+            {% for item in site.data.navigation %}
+            <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+            {% endfor %}
 
-                        {% for item in site.data.navigation %}
-                        <li><a href="{{ item.link }}">{{ item.name }}</a></li>
-                        {% endfor %}
-
-                    </ul>
-                </div>
-            </nav>
+          </ul>
         </div>
+      </nav>
+    </div>
+
+    {{ content }}
 
 
+    <footer class="page-footer">
+      <div class="footer-copyright">
+        <div class="container">
+          © 2017 Copyright {{ site.author }}
+        </div>
+      </div>
+    </footer>
 
-        {{ content }}
-
-
-        <footer class="page-footer">
-            <div class="footer-copyright">
-                <div class="container">
-                    © 2017 Copyright {{ site.author }}
-                </div>
-            </div>
-        </footer>
-
-        <!-- Scripts -->
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
-        <script src="/assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>
