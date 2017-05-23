@@ -5,3 +5,8 @@ cover: https://raw.githubusercontent.com/ankitrgadiya/deneb/master/assets/images
 
 lang: "en"
 google_verification: J0CD-ynr2w5EhpI_VrP-OOrThFQcJyRyTnWTWz2dfgU
+
+paginate: 5
+paginate_path: "/page:num/"
+
+gems: [jekyll-paginate]
